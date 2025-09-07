@@ -75,7 +75,7 @@ const About = () => {
                 className="text-center text-5xl font-Ovo mb-20"
                 variants={itemVariants}
             >
-                About me
+                About me 🤔
             </motion.h3>
 
             {/* Main Content Container */}

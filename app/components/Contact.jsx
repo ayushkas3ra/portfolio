@@ -95,7 +95,7 @@ const Contact = () => {
                 className="text-center text-5xl font-Ovo mb-4"
                 variants={itemVariants}
             >
-                Get in touch
+                Get in touch ✉️
             </motion.h2>
 
             <motion.p

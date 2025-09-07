@@ -78,24 +78,22 @@ export const assets = {
 
 export const workData = [
   {
-    title: "Frontend project",
-    description: "Web Design",
+    title: "Portfolio Website",
+    description: "Frontend",
     bgImage: "/work-1.png",
+    link: "https://ayushkasera.netlify.app/",
   },
   {
-    title: "Geo based app",
-    description: "Mobile App",
+    title: "AI chat application",
+    description: "Frontend + Gemini API Integration",
     bgImage: "/work-2.png",
+    link: "https://geminicl0ne.netlify.app/",
   },
   {
-    title: "Photography site",
-    description: "Web Design",
+    title: "Startup website",
+    description: "Responsive Frontend Website",
     bgImage: "/work-3.png",
-  },
-  {
-    title: "UI/UX designing",
-    description: "UI/UX Design",
-    bgImage: "/work-4.png",
+    link: "https://www.flyingava.com/",
   },
 ];
 

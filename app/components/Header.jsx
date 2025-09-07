@@ -69,7 +69,7 @@ const Header = () => {
                     contact me
                     <Image src={assets.right_arrow_white} alt="Arrow" className="w-4" />
                 </a>
-                <a href="/sample-resume.pdf" download className="px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2 hover:bg-gray-100 transition-colors">
+                <a href="/sample-resume.pdf" target="_blank" className="px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2 hover:bg-gray-100 transition-colors">
                     my resume
                     <Image src={assets.download_icon} alt="Download" className="w-4" />
                 </a>

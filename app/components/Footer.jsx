@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { assets } from '@/assets/assets';
-import { motion } from 'framer-motion'; // Corrected import
+import { motion } from 'framer-motion';
 
 const Footer = () => {
     const socialLinks = [
@@ -40,11 +40,17 @@ const Footer = () => {
         >
             {/* Main Footer Content */}
             <div className="text-center">
-                {/* Logo */}
+                {/* Logo - FIXED: Using tween for multi-keyframe animation */}
                 <motion.div
                     variants={itemVariants}
-                    whileHover={{ scale: 1.05, rotate: [0, -5, 5, 0] }}
-                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                    whileHover={{
+                        scale: 1.05,
+                        rotate: [0, -5, 5, 0]
+                    }}
+                    transition={{
+                        scale: { type: "spring", stiffness: 400, damping: 17 },
+                        rotate: { type: "tween", duration: 0.6 }
+                    }}
                 >
                     <Image
                         src={assets.logo}
@@ -68,6 +74,7 @@ const Footer = () => {
                         transition={{
                             repeat: Infinity,
                             duration: 3,
+                            type: "tween", // FIXED: Using tween for multi-keyframe
                             ease: "easeInOut"
                         }}
                     >
@@ -125,9 +132,7 @@ const Footer = () => {
                 variants={itemVariants}
             >
                 <motion.p className="text-gray-600 font-Outfit text-sm">
-
                     🕉️ कर्मण्येवाधिकारस्ते मा फलेषु कदाचन।
-
                     मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि॥
                 </motion.p>
                 <motion.p className="text-gray-500 font-Outfit text-xs mt-2 sm:mt-0">
@@ -135,17 +140,28 @@ const Footer = () => {
                 </motion.p>
             </motion.div>
 
-            {/* Floating Animation Elements */}
+            {/* Floating Animation Elements - FIXED: Using tween for multi-keyframe */}
             <motion.div
                 className="absolute top-10 left-10 w-2 h-2 bg-purple-300 rounded-full opacity-60"
                 animate={{ y: [0, -20, 0], opacity: [0.6, 1, 0.6] }}
-                transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+                transition={{
+                    repeat: Infinity,
+                    duration: 3,
+                    type: "tween",
+                    ease: "easeInOut"
+                }}
             />
 
             <motion.div
                 className="absolute top-16 right-20 w-1 h-1 bg-pink-300 rounded-full opacity-70"
                 animate={{ y: [0, -15, 0], x: [0, 10, 0], opacity: [0.7, 1, 0.7] }}
-                transition={{ repeat: Infinity, duration: 4, delay: 1, ease: "easeInOut" }}
+                transition={{
+                    repeat: Infinity,
+                    duration: 4,
+                    delay: 1,
+                    type: "tween",
+                    ease: "easeInOut"
+                }}
             />
         </motion.div>
     );

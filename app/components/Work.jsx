@@ -1,7 +1,7 @@
 import React from 'react';
 import { workData, assets } from '@/assets/assets';
 import Image from 'next/image';
-import { motion } from 'framer-motion'; // Corrected import
+import { motion } from 'motion/react'; // Corrected import
 
 const Work = () => {
     // Define container variants for the entire section
@@ -11,8 +11,8 @@ const Work = () => {
             opacity: 1,
             y: 0,
             transition: {
-                when: "beforeChildren", // Parent animation runs first
-                staggerChildren: 0.1,    // Staggers children's animation start time
+                when: "beforeChildren",
+                staggerChildren: 0.1,
             },
         },
     };
@@ -39,7 +39,7 @@ const Work = () => {
             opacity: 1,
             y: 0,
             transition: {
-                when: "beforeChildren", // Grid animates, then its children
+                when: "beforeChildren",
                 staggerChildren: 0.1,
                 duration: 0.6,
             }
@@ -68,14 +68,14 @@ const Work = () => {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }} // Trigger animation when 20% of component is in view
+            viewport={{ once: true, amount: 0.2 }}
         >
             {/* Section Header */}
             <motion.h2
                 className="text-center mb-2 text-5xl font-Ovo"
                 variants={itemVariants}
             >
-                My projects
+                My projects 🧑‍💻
             </motion.h2>
 
             <motion.p
@@ -98,81 +98,88 @@ const Work = () => {
                         variants={cardVariants}
                         whileHover="hover"
                     >
-                        {/* Overlay and Info Card are children, so they'll get the stagger effect */}
-                        <div className="absolute inset-0 bg-black/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-                        <motion.div
-                            className="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between shadow-lg"
-                            initial={{ y: 20, opacity: 0.8 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            whileHover={{
-                                y: -8,
-                                opacity: 1,
-                                boxShadow: "0 20px 40px rgba(0,0,0,0.1)"
-                            }}
-                            transition={{
-                                duration: 0.3,
-                                type: "spring",
-                                stiffness: 400,
-                                damping: 17
-                            }}
+                        <motion.a
+                            href={project.link}
+                            className="block w-full h-full"
+                            target="_blank"
                         >
-                            <div className="flex-1">
-                                <h2 className="font-semibold text-lg font-Ovo text-gray-800">
-                                    {project.title}
-                                </h2>
-                                <p className="text-gray-600 text-sm font-Outfit">
-                                    {project.description}
-                                </p>
-                            </div>
+                            {/* Overlay */}
+                            <div className="absolute inset-0 bg-black/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                            {/* Send Icon Button */}
+                            {/* Info Card */}
                             <motion.div
-                                className="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] bg-white"
+                                className="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between shadow-lg"
+                                initial={{ y: 20, opacity: 0.8 }}
+                                animate={{ y: 0, opacity: 1 }}
                                 whileHover={{
-                                    backgroundColor: "#bef264",
-                                    scale: 1.1,
-                                    rotate: 15,
-                                    boxShadow: "3px_3px_0_#000"
+                                    y: -8,
+                                    opacity: 1,
+                                    boxShadow: "0 20px 40px rgba(0,0,0,0.1)"
                                 }}
-                                whileTap={{ scale: 0.95 }}
                                 transition={{
+                                    duration: 0.3,
                                     type: "spring",
                                     stiffness: 400,
                                     damping: 17
                                 }}
                             >
+                                <div className="flex-1">
+                                    <h2 className="font-semibold text-lg font-Ovo text-gray-800">
+                                        {project.title}
+                                    </h2>
+                                    <p className="text-gray-600 text-sm font-Outfit">
+                                        {project.description}
+                                    </p>
+                                </div>
+
+                                {/* Send Icon Button */}
                                 <motion.div
-                                    whileHover={{ x: 2, y: -2 }}
-                                    transition={{ duration: 0.2 }}
+                                    className="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] bg-white"
+                                    whileHover={{
+                                        backgroundColor: "#bef264",
+                                        scale: 1.1,
+                                        rotate: 15,
+                                        boxShadow: "3px_3px_0_#000"
+                                    }}
+                                    whileTap={{ scale: 0.95 }}
+                                    transition={{
+                                        type: "spring",
+                                        stiffness: 400,
+                                        damping: 17
+                                    }}
                                 >
-                                    <Image
-                                        src={assets.send_icon}
-                                        alt="View project"
-                                        className="w-5"
-                                    />
+                                    <motion.div
+                                        whileHover={{ x: 2, y: -2 }}
+                                        transition={{ duration: 0.2 }}
+                                    >
+                                        <Image
+                                            src={assets.send_icon}
+                                            alt="View project"
+                                            className="w-5"
+                                        />
+                                    </motion.div>
                                 </motion.div>
                             </motion.div>
-                        </motion.div>
 
-                        {/* Floating Elements (Optimized to be children of the card) */}
-                        <motion.div
-                            className="absolute top-4 right-4 w-2 h-2 bg-white/60 rounded-full opacity-0 group-hover:opacity-100"
-                            animate={{ y: [0, -10, 0], opacity: [0.6, 1, 0.6] }}
-                            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-                        />
+                            {/* Floating Elements */}
+                            <motion.div
+                                className="absolute top-4 right-4 w-2 h-2 bg-white/60 rounded-full opacity-0 group-hover:opacity-100"
+                                animate={{ y: [0, -10, 0], opacity: [0.6, 1, 0.6] }}
+                                transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                            />
 
-                        <motion.div
-                            className="absolute top-8 right-8 w-1 h-1 bg-white/40 rounded-full opacity-0 group-hover:opacity-100"
-                            animate={{ y: [0, -8, 0], x: [0, 5, 0], opacity: [0.4, 0.8, 0.4] }}
-                            transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-                        />
+                            <motion.div
+                                className="absolute top-8 right-8 w-1 h-1 bg-white/40 rounded-full opacity-0 group-hover:opacity-100"
+                                animate={{ y: [0, -8, 0], x: [0, 5, 0], opacity: [0.4, 0.8, 0.4] }}
+                                transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+                            />
+                        </motion.a>
                     </motion.div>
                 ))}
             </motion.div>
 
-            {/* Call to Action */}
-            {/* <motion.div
+            {/* Call to Action - Uncommented */}
+            <motion.div
                 className="text-center mt-16"
                 variants={itemVariants}
             >
@@ -199,7 +206,7 @@ const Work = () => {
                         />
                     </motion.div>
                 </motion.a>
-            </motion.div> */}
+            </motion.div>
         </motion.div>
     );
 };
