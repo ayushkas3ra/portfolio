@@ -44,7 +44,7 @@ const Header = () => {
                 className="flex items-end gap-2 text-xl md:text-2xl mb-3 font-Ovo"
                 variants={itemVariants}
             >
-                namastey 🙏
+                namastey 🙏! I am
             </motion.h3>
 
             <motion.h1
@@ -58,7 +58,7 @@ const Header = () => {
                 className="max-w-2xl mx-auto font-Ovo"
                 variants={itemVariants}
             >
-                I am a final year B.Tech. CSE student, passionate about web development and designing.
+                a final year B.Tech. CSE student, passionate about web development and designing.
             </motion.p>
 
             <motion.div

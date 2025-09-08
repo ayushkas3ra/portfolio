@@ -80,33 +80,16 @@ const About = () => {
 
             {/* Main Content Container */}
             <div className="flex w-full flex-col lg:flex-row items-center gap-20 my-20">
-                {/* Profile Image */}
-                {/* <motion.div 
-                    className="w-64 sm:w-80 rounded-3xl max-w-none relative"
-                    variants={imageVariants}
-                    whileHover={{ scale: 1.05, rotate: [0, -2, 2, 0], transition: { duration: 0.3 } }}
-                >
-                    <Image 
-                        src={assets.user_image} 
-                        alt="Profile picture" 
-                        className="w-full rounded-3xl shadow-2xl" 
-                    />
-                    <motion.div
-                        className="absolute -inset-1 bg-gradient-to-r from-purple-400 to-pink-400 rounded-3xl opacity-20 -z-10"
-                        animate={{ rotate: [0, 360] }}
-                        transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
-                    />
-                </motion.div> */}
 
                 {/* Content Section */}
                 <div className="flex-1 flex flex-col items-center justify-center">
                     {/* Description */}
-                    <motion.p
+                    {/* <motion.p
                         className="mb-10 max-w-2xl font-Ovo text-center text-gray-700 text-lg leading-relaxed"
                         variants={itemVariants}
                     >
                         I am a final year B.Tech. student, passionate about web development and UI/UX designing.
-                    </motion.p>
+                    </motion.p> */}
 
                     {/* Info Cards Grid */}
                     <motion.ul
