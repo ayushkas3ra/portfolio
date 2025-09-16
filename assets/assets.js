@@ -81,19 +81,25 @@ export const workData = [
     title: "Portfolio Website",
     description: "Frontend",
     bgImage: "/work-1.png",
-    link: "https://ayushkasera.netlify.app/",
+    link: "https://ayushkasera.com/",
+    repo: "https://github.com/ayushkas3ra/portfolio",
+    video: "/portfolio.mp4",
   },
   {
     title: "AI chat application",
     description: "Frontend + Gemini API Integration",
     bgImage: "/work-2.png",
     link: "https://geminicl0ne.netlify.app/",
+    repo: "https://github.com/ayushkas3ra/gemini-clone",
+    video: "/gemini.mp4",
   },
   {
-    title: "Startup website",
+    title: "Responsive frontend website",
     description: "Responsive Frontend Website",
     bgImage: "/work-3.png",
     link: "https://www.flyingava.com/",
+    repo: "https://github.com/ayushkas3ra/flyingava.july",
+    video: "/flyingava.mp4",
   },
 ];
 

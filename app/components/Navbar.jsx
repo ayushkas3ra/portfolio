@@ -57,7 +57,7 @@ const Navbar = () => {
                             <li key={item.name}>
                                 <a
                                     href={item.href}
-                                    className="text-gray-800 hover:text-black transition-colors relative inline-block p-3 rounded-full hover:bg-white/50"
+                                    className="text-gray-200 hover:text-white transition-colors relative inline-block p-3 rounded-full hover:bg-white/50"
                                     title={item.name}
                                 >
                                     {item.icon}
