@@ -14,7 +14,7 @@ const Header = () => {
             </h1>
 
             <p className="max-w-2xl mx-auto font-Ovo text-gray-400">
-                a CS guy passionate about web development and designing.
+                CS grad | 2026 | Development | AI
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
