@@ -21,7 +21,7 @@ const Header = () => {
                 <a href="#contact" className="px-10 py-3 border rounded-full border-white text-white flex items-center gap-2 hover:bg-white hover:text-black transition-colors">
                     contact me
                 </a>
-                <a href="/sample-resume.pdf" target="_blank" className="px-10 py-3 border rounded-full border-white text-white flex items-center gap-2 hover:bg-white hover:text-black transition-colors">
+                <a href="/AyushKasera_CV.pdf" target="_blank" className="px-10 py-3 border rounded-full border-white text-white flex items-center gap-2 hover:bg-white hover:text-black transition-colors">
                     my resume
                 </a>
             </div>
