@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from "next/image";
+import Typewriter from 'typewriter-effect';
 import { infoList } from '@/assets/assets';
 
 const About = () => {
@@ -9,11 +10,20 @@ const About = () => {
             className="w-full px-[12%] py-10 scroll-mt-20 bg-[url(../assets/wallpaper.jpg)] bg-cover bg-fixed bg-center text-white"
         >
             {/* Section Header */}
-            <h4 className="text-center mb-2 text-lg font-Ovo text-gray-400">
+            {/* <h4 className="text-center mb-2 text-lg font-Ovo text-gray-400">
                 Introduction
-            </h4>
+            </h4> */}
             <h3 className="text-center text-5xl font-Ovo mb-20 text-white">
-                About me 🤔
+                <Typewriter
+                    options={{
+                        strings: ['About me 🤔'],
+                        autoStart: true,
+                        loop: true,
+                        cursor: '|',
+                        delay: 50,
+                        startDelay: 2000, // Delay to start after name
+                    }}
+                />
             </h3>
 
             {/* Info Cards Grid */}

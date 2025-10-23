@@ -1,4 +1,5 @@
 import React from 'react';
+import Typewriter from 'typewriter-effect';
 import { useState } from 'react';
 
 const Contact = () => {
@@ -42,12 +43,22 @@ const Contact = () => {
             className="w-full px-[12%] py-10 scroll-mt-20 bg-[url(../assets/wallpaper.jpg)] bg-cover bg-fixed bg-center text-white"
         >
             {/* Section Header */}
-            <h4 className="text-center mb-2 text-lg font-Outfit text-gray-400">
+            {/* <h4 className="text-center mb-2 text-lg font-Outfit text-gray-400">
                 Connect with me
-            </h4>
+            </h4> */}
 
             <h2 className="text-center text-5xl font-Ovo mb-4 text-white">
-                Get in touch ✉️
+
+                <Typewriter
+                    options={{
+                        strings: ['Get in touch ✉️'],
+                        autoStart: true,
+                        loop: true,
+                        cursor: '|',
+                        delay: 50,
+                        startDelay: 2000, // Delay to start after name
+                    }}
+                />
             </h2>
 
             <p className="text-center max-w-2xl mx-auto mt-5 mb-12 font-Outfit text-gray-300">

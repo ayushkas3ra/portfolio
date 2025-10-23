@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Typewriter from 'typewriter-effect';
 import { workData } from '@/assets/assets';
 
 const Work = () => {
@@ -6,12 +7,21 @@ const Work = () => {
         <div id="work" className="px-5 lg:px-8 xl:px-[8%] py-10 bg-[url(../assets/wallpaper.jpg)] bg-cover bg-fixed bg-center text-white">
             {/* Section Header */}
             <h2 className="text-center mb-2 text-5xl font-Ovo text-white">
-                My projects 🧑‍💻
+
+                <Typewriter
+                    options={{
+                        strings: ['My projects 🧑‍💻'],
+                        autoStart: true,
+                        loop: true,
+                        cursor: '|',
+                        delay: 50,
+                        startDelay: 2000, // Delay to start after name
+                    }}
+                />
+
             </h2>
 
-            <p className="text-center text-lg mb-12 max-w-2xl mx-auto font-Outfit text-gray-400">
-                Explore my latest work and projects
-            </p>
+
 
             {/* Projects Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-10 gap-5 max-w-6xl mx-auto">

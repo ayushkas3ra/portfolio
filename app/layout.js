@@ -11,8 +11,8 @@ const ovo = Ovo({
 });
 
 export const metadata = {
-  title: "Ayush Kasera",
-  description: "Portfolio",
+  title: "Ayush's portfolio",
+  description: "",
 };
 
 export default function RootLayout({ children }) {
