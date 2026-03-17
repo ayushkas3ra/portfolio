@@ -13,20 +13,19 @@ const Stacks = () => {
       >
         Resume
       </a>
-
-      <a
-        href="https://coachingmandi.vercel.app/"
-        target="_blank"
-        className="hover:scale-102 text-xl bg-white text-black rounded-xl h-12 w-[80%] md:w-1/2 flex items-center justify-center mt-5 cursor-pointer"
-      >
-        Project1: Coaching Mandi
-      </a>
       <a
         href="https://rudhira-beta.vercel.app/"
         target="_blank"
         className="hover:scale-102 text-xl bg-white text-black rounded-xl h-12 w-[80%] md:w-1/2 flex items-center justify-center mt-5 cursor-pointer"
       >
-        Project2: Rudhira
+        Project1: Rudhira
+      </a>
+      <a
+        href="https://food-app-ayush.vercel.app/"
+        target="_blank"
+        className="hover:scale-102 text-xl bg-white text-black rounded-xl h-12 w-[80%] md:w-1/2 flex items-center justify-center mt-5 cursor-pointer"
+      >
+        Project2: Foodgram
       </a>
       <a
         href="https://www.github.com/ayushkas3ra"
