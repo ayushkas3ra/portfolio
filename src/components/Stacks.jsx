@@ -49,7 +49,7 @@ const Stacks = () => {
         Linkedin
       </a>
       <a
-        href="mailto:ayushkasera@protonmail.com"
+        href="mailto:ayushkasera.dev@gmail.com.com"
         target="_blank"
         className="hover:scale-102 text-xl bg-white text-black rounded-xl h-12 w-[80%] md:w-1/2 flex items-center justify-center mt-5 cursor-pointer"
       >
