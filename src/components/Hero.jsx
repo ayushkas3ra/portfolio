@@ -1,8 +1,8 @@
-"use client";
-import React from "react";
-import Image from "next/image";
-import { FileUser } from "lucide-react";
-import ContactSection from "../components/Contact";
+'use client'
+import React from 'react'
+import Image from 'next/image'
+import { FileUser } from 'lucide-react'
+import ContactSection from '../components/Contact'
 
 const Hero = () => {
   return (
@@ -23,12 +23,12 @@ const Hero = () => {
         >
           <h1 className="text-4xl font-bold text-white">Ayush Kasera</h1>
           <p className="text-gray-400 mt-4 tracking-widest uppercase text-sm">
-            M.E.R.N. + A.I.
+            Full stack AI software developer
           </p>
         </section>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero
