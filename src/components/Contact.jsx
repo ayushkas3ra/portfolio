@@ -1,91 +1,58 @@
-"use client";
-import { useState } from "react";
-import { Mail } from "lucide-react";
+import { useEffect, useRef, useState } from 'react'
+import { Copy, Mail } from 'lucide-react'
 
-export default function ContactSection() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [result, setResult] = useState("");
+export function Contact({ contact }) {
+  const [copyStatus, setCopyStatus] = useState('')
+  const statusTimer = useRef(null)
 
-  const onSubmit = async (event) => {
-    event.preventDefault();
-    setResult("Sending....");
-    const formData = new FormData(event.target);
-    formData.append("access_key", "0eb64ad9-ff1b-4596-ace0-2483ce369625");
+  useEffect(() => {
+    return () => window.clearTimeout(statusTimer.current)
+  }, [])
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData,
-    });
+  async function copyEmail() {
+    try {
+      if (!navigator.clipboard?.writeText) {
+        throw new Error('Clipboard access is unavailable.')
+      }
 
-    const data = await response.json();
-    if (data.success) {
-      setResult("Message sent!");
-      event.target.reset();
-    } else {
-      setResult("Error");
+      await navigator.clipboard.writeText(contact.email)
+      setCopyStatus('Email copied to clipboard.')
+    } catch (error) {
+      console.error('Unable to copy the contact email.', error)
+      setCopyStatus('Could not copy email. Please copy it manually.')
     }
-  };
+
+    window.clearTimeout(statusTimer.current)
+    statusTimer.current = window.setTimeout(() => setCopyStatus(''), 2500)
+  }
+
+  if (!contact.email) {
+    return null
+  }
 
   return (
-    <div className="relative">
-      <button
-        onClick={() => setIsOpen(true)}
-        className=" self-start gap-2 mb-3 h-8 w-35 cursor-pointer rounded-2xl text-white border-2 hover:bg-slate-900 flex items-center justify-center font-bold transition-colors"
-      >
-        <Mail className="h-5" />
-      </button>
-
-      {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center">
-          <div
-            className="absolute inset-0 bg-black/40 backdrop-blur-sm"
-            onClick={() => setIsOpen(false)}
-          />
-
-          {/* contact box */}
-          <div className="relative bg-gray-900 p-8 rounded-sm shadow-2xl w-full max-w-md mx-4 z-10">
-            <h2 className="text-2xl font-bold mb-4">Get in touch</h2>
-
-            <form onSubmit={onSubmit}>
-              <input
-                type="text"
-                name="name"
-                required
-                placeholder="Name"
-                className="w-full p-2 outline-none mb-3 border-b"
-              />
-              <input
-                type="email"
-                name="email"
-                required
-                placeholder="Email"
-                className="w-full p-2 outline-none mb-3 border-b"
-              />
-              <textarea
-                name="message"
-                required
-                placeholder="Message"
-                className="w-full p-2 outline-none mb-3 border-b resize-none"
-              ></textarea>
-              <button
-                type="submit"
-                className="w-full p-2 bg-black text-white outline-none rounded-md cursor-pointer"
-              >
-                Send Message
-              </button>
-              <span>{result}</span>
-            </form>
-
-            {/* Close Button */}
-            <button
-              onClick={() => setIsOpen(false)}
-              className="absolute top-4 right-4 text-gray-500 cursor-pointer"
-            >
-              ✕
-            </button>
-          </div>
-        </div>
-      )}
-    </div>
-  );
+    <section className="section contact entrance" aria-labelledby="contact-heading">
+      <h2 className="section__heading" id="contact-heading">
+        {contact.heading}
+      </h2>
+      <div className="contact__details">
+        <a className="contact__email" href={`mailto:${contact.email}`}>
+          <Mail aria-hidden="true" size={17} />
+          <span>{contact.email}</span>
+        </a>
+        <button
+          className="copy-button"
+          type="button"
+          onClick={copyEmail}
+          aria-label="Copy email address"
+        >
+          <Copy aria-hidden="true" size={16} />
+          <span>Copy</span>
+        </button>
+      </div>
+      <p className="contact__status" role="status" aria-live="polite">
+        {copyStatus}
+      </p>
+    </section>
+  )
 }

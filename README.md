@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Developer Portfolio
 
-## Getting Started
+A responsive, single-page developer portfolio built with React and Vite.
 
-First, run the development server:
+## Requirements
 
-```bash
+- Node.js (current LTS recommended)
+- npm
+
+## Local development
+
+Install dependencies and start the Vite development server:
+
+```sh
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technology stack
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- React and JavaScript
+- Vite
+- External CSS
+- Lucide React and lightweight SVG icons
+- Vercel Web Analytics and Speed Insights
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Analytics provides supported aggregate reporting on the free Vercel Hobby plan. Custom click tracking is deferred because it is unavailable on that plan.
 
-## Learn More
+## Checks and production build
 
-To learn more about Next.js, take a look at the following resources:
+```sh
+npm run lint
+npm run build
+npm run preview
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The production build is written to `dist/`. `npm run preview` serves that build locally.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
+1. Import the repository into Vercel.
+2. Select the Vite framework preset, build command `npm run build`, and output directory `dist`.
+3. Enable Web Analytics and Speed Insights in the Vercel project settings.
+4. Once the production domain is known, add its canonical URL and any absolute social metadata URLs to `index.html`.
+5. Deploy through Vercel and verify analytics and metadata on the production domain.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+No backend or environment variables are required by the current application.
