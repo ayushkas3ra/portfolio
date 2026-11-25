@@ -142,10 +142,12 @@ Include:
 - Meta description.
 - Open Graph metadata.
 - X card metadata.
-- Canonical URL.
+- Canonical URL: `https://www.ayushkasera.com/`.
+- `og:url` matching the canonical URL.
+- Absolute Open Graph and X image URLs referencing `profile-picture.webp`.
 - Favicon.
 
-Set the canonical URL and absolute production URLs only after the production domain is confirmed. Do not reference a social preview image until that asset exists.
+The existing profile photo is used as the current social preview image. A dedicated 1200 × 630 preview asset is not present.
 
 ## 10. Testing Strategy
 
