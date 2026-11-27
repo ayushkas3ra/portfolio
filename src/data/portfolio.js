@@ -43,14 +43,14 @@ export const portfolio = {
         repositoryUrl: 'https://github.com/ayushkas3ra/chatpersona',
         demoUrl: null,
       },
-      {
-        name: 'Countdown to Secret Wars',
-        description: 'A cinematic countdown experience for marvel fans',
-        technologies: ['React', 'Javascript', 'CSS'],
-        status: 'In development',
-        repositoryUrl: 'https://github.com/ayushkas3ra/countdowntosecretwars',
-        demoUrl: null,
-      },
+      // {
+      //   name: 'Countdown to Secret Wars',
+      //   description: 'A cinematic countdown experience for marvel fans',
+      //   technologies: ['React', 'Javascript', 'CSS'],
+      //   status: 'In development',
+      //   repositoryUrl: 'https://github.com/ayushkas3ra/countdowntosecretwars',
+      //   demoUrl: null,
+      // },
     ],
   },
   socialLinks: [
